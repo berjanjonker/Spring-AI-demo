@@ -16,11 +16,11 @@ If you want to use this project with another API, please check the [Spring AI AP
 ## Examples
 This demo includes the following examples:
 
-- Example 1: Demonstration of using the Spring AI ChatModel.
-- Example 2: Implementation of the ChatClient API.
-- Example 3: Example of entity mapping with Spring AI.
-- Example 4: Using advisors in an AI interaction.
-- Example 5: Custom tools and their integration with AI models.
+- [Example 1](src/main/java/nl/getthere/demo/example1/Example1.java): Demonstration of using the Spring AI ChatModel.
+- [Example 2](src/main/java/nl/getthere/demo/example2/Example2.java): Implementation of the ChatClient API.
+- [Example 3](src/main/java/nl/getthere/demo/example3/Example3.java): Example of entity mapping with Spring AI.
+- [Example 4](src/main/java/nl/getthere/demo/example4/Example4.java): Using advisors in an AI interaction.
+- [Example 5](src/main/java/nl/getthere/demo/example5/Example5.java): Custom tools and their integration with AI models.
 
 Each example class is located in the nl.getthere.demo package and can be executed individually to test the specific functionality.
 
