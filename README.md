@@ -21,7 +21,7 @@ Deze demo bevat de volgende voorbeelden:
 - [Example 2](src/main/java/nl/getthere/demo/example2/Example2.java): Implementatie van de ChatClient API.
 - [Example 3](src/main/java/nl/getthere/demo/example3/Example3.java): Voorbeeld van entity mapping met Spring AI.
 - [Example 4](src/main/java/nl/getthere/demo/example4/Example4.java): Gebruik van advisors in een AI-interactie.
-- [Example 5](src/main/java/nl/getthere/demo/example5/Example5.java): Custom tools en hun integratie met AI modellen.
+- [Example 5](src/main/java/nl/getthere/demo/tools/Example5.java): Custom tools en hun integratie met AI modellen.
 
 Elke voorbeeldklasse bevindt zich in het nl.getthere.demo pakket en kan individueel worden uitgevoerd om de specifieke functionaliteit te testen.
 
