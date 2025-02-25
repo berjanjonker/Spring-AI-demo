@@ -29,13 +29,13 @@ public class Example5 {
 
         toolCallToEntity(chatClient);
 
-        toolCallWithContextArgement(chatClient);
+//        toolCallWithContextArgument(chatClient);
     }
 
     private void toolCallWithIndirectQuestion(ChatClient chatClient) {
         String response = chatClient.prompt()
                 .user("Wat is de temperatuur in de hoofdstad van Spanje?")
-                .functions("currentWeather")
+                .tools(new MockWeatherService())
                 .call()
                 .content();
         logger.info(response);
@@ -44,7 +44,7 @@ public class Example5 {
     private void multipleToolCalls(ChatClient chatClient) {
         String response = chatClient.prompt()
                 .user("Wat is de temperatuur in Madrid, Leek en Amsterdam?")
-                .functions("currentWeather")
+                .tools(new MockWeatherService())
                 .call()
                 .content();
         logger.info(response);
@@ -53,16 +53,16 @@ public class Example5 {
     private void toolCallToEntity(ChatClient chatClient) {
         Weather weather = chatClient.prompt()
                 .user("Wat is de temperatuur in Madrid?")
-                .functions("currentWeather")
+                .tools(new MockWeatherService())
                 .call()
                 .entity(Weather.class);
         logger.info(weather.toString());
     }
 
-    private void toolCallWithContextArgement(ChatClient chatClient) {
+    private void toolCallWithContextArgument(ChatClient chatClient) {
         String response = chatClient.prompt()
                 .user("Wat is de temperatuur in Madrid, Leek en Amsterdam?")
-                .functions("currentWeather")
+                .tools(new MockWeatherService())
                 .toolContext(Map.of("unit", "F"))
                 .call()
                 .content();

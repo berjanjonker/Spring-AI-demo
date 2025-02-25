@@ -2,35 +2,29 @@ package nl.getthere.demo.tools;
 
 
 import org.springframework.ai.chat.model.ToolContext;
+import org.springframework.ai.tool.annotation.Tool;
 
-import java.util.function.BiFunction;
-
-import static nl.getthere.demo.tools.MockWeatherService.Request;
-import static nl.getthere.demo.tools.MockWeatherService.Response;
-
-public class MockWeatherService implements BiFunction<Request, ToolContext, Response> {
+public class MockWeatherService {
 
     public enum Unit { C, F }
-    public record Request(String location) {}
     public record Response(Double temp, Unit unit) {}
 
-//    public Response apply(Request request, ToolContext toolContext) {
-//        return switch (request.location) {
-//            case "Leek" -> new Response(8.0, Unit.C);
-//            case "Madrid" -> new Response(30.0, Unit.C);
-//            default -> new Response(null, Unit.C);
-//        };
-//    }
-
-
-
-
-    public Response apply(Request request, ToolContext toolContext) {
-        Unit unit = Unit.valueOf((String) toolContext.getContext().get("unit"));
-        return switch (request.location) {
-            case "Leek" -> new Response(8.0, unit);
-            case "Madrid" -> new Response(30.0, unit);
-            default -> new Response(null, unit);
+    @Tool(description = "Get the weather in location")
+    public Response getWeatherForLocation(String location) {
+        return switch (location) {
+            case "Leek" -> new Response(8.0, Unit.C);
+            case "Madrid" -> new Response(30.0, Unit.C);
+            default -> new Response(null, Unit.C);
         };
     }
+
+//    @Tool(description = "Get the weather in location")
+//    public Response getWeatherForLocationWithToolContext(String location, ToolContext toolContext) {
+//        Unit unit = Unit.valueOf((String) toolContext.getContext().get("unit"));
+//        return switch (location) {
+//            case "Leek" -> new Response(8.0, unit);
+//            case "Madrid" -> new Response(30.0, unit);
+//            default -> new Response(null, unit);
+//        };
+//    }
 }

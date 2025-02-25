@@ -22,15 +22,15 @@ public class Example1 {
 
     public void run() {
         logger.info("Example1 - Chat Model");
-        AzureOpenAiChatModel chatModel = new AzureOpenAiChatModel(
-                new OpenAIClientBuilder()
-                        .credential(new AzureKeyCredential(azureOpenAiApiKey))
-                        .endpoint(azureOpenAiEndpoint),
-                AzureOpenAiChatOptions.builder()
-                        .deploymentName("gpt-4o-mini")
-                        .temperature(0.7)
-                        .build()
-        );
+        AzureOpenAiChatModel chatModel = AzureOpenAiChatModel.builder()
+            .openAIClientBuilder(new OpenAIClientBuilder()
+                .credential(new AzureKeyCredential(azureOpenAiApiKey))
+                .endpoint(azureOpenAiEndpoint))
+            .defaultOptions(AzureOpenAiChatOptions.builder()
+                .deploymentName("gpt-4o-mini")
+                .temperature(0.7)
+                .build())
+            .build();
 
         String response = chatModel.call("Generate the names of 5 famous pirates.");
         logger.info(response);

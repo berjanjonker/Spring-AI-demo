@@ -1,14 +1,9 @@
 package nl.getthere.demo.example2;
 
-import com.azure.ai.openai.OpenAIClientBuilder;
-import com.azure.core.credential.AzureKeyCredential;
 import org.springframework.ai.azure.openai.AzureOpenAiChatModel;
-import org.springframework.ai.azure.openai.AzureOpenAiChatOptions;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.messages.AssistantMessage;
 import org.springframework.ai.chat.messages.UserMessage;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,8 +24,7 @@ public class Example2 {
 
     public void run() {
         logger.info("Example2 - Chat Client");
-        ChatClient chatClient = ChatClient.builder(azureOpenAiChatModel)
-                .build();
+        ChatClient chatClient = ChatClient.builder(azureOpenAiChatModel).build();
 
         simpleChatExample(chatClient);
 

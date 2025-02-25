@@ -31,17 +31,17 @@ public class DemoApplication {
 	public void execute() {
 		logger.info("-------------------------------");
 
-//		Spring AI: ChatModel
-		example1.run();
-
-//		Spring AI: ChatClient
-		example2.run();
-
-//		Spring AI: Entity mapping
-		example3.run();
-
-//		Spring AI: Advisor
-		example4.run();
+////		Spring AI: ChatModel
+//		example1.run();
+//
+////		Spring AI: ChatClient
+//		example2.run();
+//
+////		Spring AI: Entity mapping
+//		example3.run();
+//
+////		Spring AI: Advisor
+//		example4.run();
 
 //		Spring AI: Custom tools
 		example5.run();
