@@ -32,7 +32,7 @@ public class DemoApplication {
 		logger.info("-------------------------------");
 
 ////		Spring AI: ChatModel
-//		example1.run();
+		example1.run();
 //
 ////		Spring AI: ChatClient
 //		example2.run();
@@ -44,7 +44,7 @@ public class DemoApplication {
 //		example4.run();
 
 //		Spring AI: Custom tools
-		example5.run();
+//		example5.run();
 
 		logger.info("-------------------------------");
 	}
